@@ -1,0 +1,37 @@
+
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>
+/*al declarar estas dos variables fuera de las funciones conseguimos que sean accesibles desde cualquier parte del código*/
+var primerSumando;
+var segundoSumando;
+alert ("Bienvenido a la p�gina que realiza sumas")
+</script>
+</head>
+<body>
+<button onclick="introducirPrimerSumando()">Introduzca el primer sumando</button>
+<script>
+//Script inmediato
+function introducirPrimerSumando(){
+/*asignamos a la variable un valor pero no la declaramos, es decir, la variable "ya existe" sólo le estoy dando un valor, mientras que como elo tenías antes la estabas creando en este punto por lo que solo se podía acceder desde dentro de está función. Pasaba lo mismo con el segundo sumando*/
+primerSumando=prompt ("Introduzca el primer sumando")};
+</script>
+<button onclick="introducirSegundoSumando()">Introduzca el segundo sumando</button>
+<script>
+//Script inmediato
+function introducirSegundoSumando(){
+segundoSumando=prompt ("Introduzca el segundo sumando")};
+</script>
+<button onclick="mostrarResultado()">Resultado suma</button>
+<script>
+
+
+function mostrarResultado(){
+/*al estar declaradas al comienzo las variables son accesibles de cualquier sitio cosa que antes no podiamos porque se declaraban dentro de cada función por lo que solo existía allí*/
+var resultado=parseFloat(primerSumando)+parseFloat(segundoSumando);
+/*el signo + en javascript es también utilizado para concatenar, es decir, unir palabras... javascript piensa que lo que has ingresado son palabras y las une... es por ello que cuando queramos realizar una suma deberemos espicificarle que lo que quiero es "sumar" números y no "juntar" palabras y la forma que tenemos de especificarlo es englobando las variables con parseFloat(n1). Esto se usa para decirle al lenguaje que n1 es un número con decimales y así usar el signo de + como suma y no como concatenación (también tenemos parseInt cuando los números sean enteros*/
+alert ("El resultado es:" + " " + resultado)};
+</script>
+</body>
+</html>
